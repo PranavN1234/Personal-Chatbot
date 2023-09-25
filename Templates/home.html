@@ -1,0 +1,28 @@
+{% include 'layout.html' %}
+
+<div class="container mt-5">
+  <h3 class="text-center text-light">
+    Talk with Pranav
+  </h3>
+  <form action="/" method="POST">
+    <div class="input-group mb-3">
+      <textarea class="form-control bg-dark text-light" placeholder="Type a message..." name="user_input" rows="3"></textarea>
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit">Send</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="card text-center mt-3 bg-dark text-light">
+    <div class="card-header">
+      Chat History:
+    </div>
+    <div class="card-body">
+      {% for response in chat_responses %}
+      <div class="chat-bubble">
+        {{ response }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
